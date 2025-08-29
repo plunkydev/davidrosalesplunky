@@ -27,7 +27,7 @@
   font-style: italic;
 }
 
-/* Fin Fuenes para el body */
+/* Fin Fuentes para el body */
 * {
     margin: 0;
     padding: 0;
@@ -37,21 +37,67 @@
 :root {
     --primary-font: "FuturaBook";
     --secondary-font: "FutuBk";
+    --verde-claro: #42c920b6;
+    --verde-matrix: #42c920;
+    --gris-azulado: #14213d75;
+    --gris-claro: #ccc;
+    --font-color-oscuro: #040909;
+    --font-color-medio: #202020;
+    --font-color-claro: #292929;
+    --nav-height: 55px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    display: grid;
-    grid-template-columns: 1fr min(80ch, 100%) 1fr;
-    font-family: var(--primary-font);
+  font-family: "FuturaBook", sans-serif;
+  color: var(--font-color-medio);
+  min-height: 9000px;
 }
-
-body > * {
-    grid-column: 2;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--secondary-font);
 }
 p {
     font-family: var(--secondary-font);
 }
+
+h2 {
+  text-align: left;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 1rem 0 2rem 0;
+}
+
+p {
+  font-family: "FuturaBook", sans-serif;
+  font-size: clamp(1rem, 5vw, 1.2rem);
+  margin: 1rem 0 1rem 0;
+  color: var(--font-color-claro);
+}
+
+/* Estilos para el encabezado -----------------------------------------------------------------------*/
+
+
+.frame {
+  -webkit-mask-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 1) var(--fade-start),
+      rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 1) var(--fade-start),
+      rgba(100, 100, 100, 0) 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  z-index: -1;
+}
+
+/* Fin Estilos para el encabezado ---------------------------------------------------------------*/
 
