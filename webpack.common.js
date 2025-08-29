@@ -21,12 +21,43 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        loader: 'html-loader'
+        loader: 'html-loader',
+        options: {
+        // No proceses/reescribas URLs dentro del HTML.
+        // Así el <link rel="icon" href="assets/icons/favicon.ico"> queda tal cual.
+          sources: false
+        }
+      },
+
+      // --- Reglas específicas con nombres fijos (para SEO/OG) ---
+      {
+        test: /favicon\.ico$/i,
+        type: 'asset/resource',
+        generator: { filename: 'assets/icons/favicon.ico' }
       },
       {
+        test: /apple-touch-icon\.(png|jpe?g)$/i,
+        type: 'asset/resource',
+        generator: { filename: 'assets/apple-touch-icon.jpg' } // fijo en .jpg
+      },
+      {
+        test: /preview-1200x630\.png$/i,
+        type: 'asset/resource',
+        generator: { filename: 'assets/preview-1200x630.png' }
+      },
+
+      // Regla general para el resto de imágenes (con hash por defecto)
+      {
         test: /\.(png|svg|jpg|jpeg|gif|webp|ico)$/i,
+        exclude: [
+          path.resolve(__dirname, 'src/assets/icons/favicon.ico'),
+          path.resolve(__dirname, 'src/assets/apple-touch-icon.jpg'),
+          path.resolve(__dirname, 'src/assets/preview-1200x630.png')
+        ],
         type: 'asset/resource'
       },
+
+      // Fuentes
       {
         test: /\.(woff2?|ttf|otf|eot)$/i,
         type: 'asset/resource',
@@ -61,4 +92,3 @@ module.exports = {
     }
   }
 }
-
