@@ -1,7 +1,7 @@
 {
-  "name": "estructuras-de-datos",
+  "name": "davidrosalesplunky",
   "version": "1.0.0",
-  "description": "estructuras de datos en javaScript",
+  "description": "David Rosales' Portfolio",
   "main": "index.js",
   "publishConfig": {
         "access": "public"
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plunkydev/estructuras-de-datos.git"
+    "url": "git+https://github.com/plunkydev/davidrosalesplunky.git"
   },
   "keywords": [
     "javascript",
@@ -30,9 +30,9 @@
   "author": "David Rosales",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/plunkydev/estructuras-de-datos/issues"
+    "url": "https://github.com/plunkydev/davidrosalesplunky/issues"
   },
-  "homepage": "https://github.com/plunkydev/estructuras-de-datos#readme",
+  "homepage": "https://github.com/plunkydev/davidrosalesplunky#readme",
   "devDependencies": {
         "css-loader": "^7.1.2",
         "html-loader": "^5.1.0",
