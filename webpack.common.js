@@ -26,34 +26,39 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource'
+      },
+      {
+        test: /\.(woff2?|ttf|otf|eot)$/i,
+        type: 'asset/resource',
+        generator: { filename: 'assets/fonts/[name][ext]' }
       }
     ]
   },
   resolve: {
-  fallback: {
-    path: false,
-    fs: false,
-    os: false,
-    util: false,
-    https: false,
-    http: false,
-    crypto: false,
-    stream: false,
-    zlib: false,
-    vm: false,
-    buffer: false,
-    url: false,
-    assert: false,
-    constants: false,
-    child_process: false,
-    worker_threads: false,
-    module: false,
-    querystring: false,
-    'uglify-js': false,
-    '@swc/core': false,
-    esbuild: false,
-    inspector: false
+    fallback: {
+      path: false,
+      fs: false,
+      os: false,
+      util: false,
+      https: false,
+      http: false,
+      crypto: false,
+      stream: false,
+      zlib: false,
+      vm: false,
+      buffer: false,
+      url: false,
+      assert: false,
+      constants: false,
+      child_process: false,
+      worker_threads: false,
+      module: false,
+      querystring: false,
+      'uglify-js': false,
+      '@swc/core': false,
+      esbuild: false,
+      inspector: false
+    }
   }
-}
 }
 
