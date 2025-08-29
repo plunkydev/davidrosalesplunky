@@ -5,6 +5,3 @@ import './style.css'
 import './assets/icons/favicon.ico'
 import './assets/apple-touch-icon.jpg'
 import './assets/preview-1200x630.png'
-
-// Si quieres seguir usando tus helpers para otras metas no críticas, puedes importarlos aquí:
-// import { injectLink, injectMeta } from './utils/head-utils'
