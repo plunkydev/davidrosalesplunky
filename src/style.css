@@ -1,17 +1,57 @@
+/* Fuenes para el body */
+@font-face {
+  font-family: "FuturaBook";
+  src: url("../src/assets/fonts/FuturaBookBT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FuturaBookItalic";
+  src: url("../src/assets/fonts/FuturaBookBT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FutuBk";
+  src: url("../src/assets/fonts/FutuBk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FutuBkItalic";
+  src: url("../src/assets/fonts/FutuBkIt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Fin Fuenes para el body */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary-font: "FuturaBook";
+    --secondary-font: "FutuBk";
+}
 body {
     display: grid;
     grid-template-columns: 1fr min(80ch, 100%) 1fr;
-    background-color: var(--secondary-color);
     font-family: var(--primary-font);
 }
 
 body > * {
     grid-column: 2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--secondary-font);
+}
+p {
+    font-family: var(--secondary-font);
 }
 
