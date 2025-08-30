@@ -1,3 +1,4 @@
+import { smoothScrollTo } from '../utils/effects'
 export function nav(nav, hamburguesa, menu, menuLinks, currentScroll, lastScroll) {
     
     
