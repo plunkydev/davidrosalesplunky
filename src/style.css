@@ -166,4 +166,182 @@ p {
 }
 
 /* Fin Estilos para el encabezado ---------------------------------------------------------------*/
+/* Estilos para el nav ---------------------------------------------------------------*/
+.nav-flotante {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height, 60px);
+  background: var(--font-color-oscuro);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 1000;
+  transition: transform 0.4s ease;
+  transform: translateY(calc(100vh - var(--nav-height)));
+  box-shadow: 0 2px 8px rgb(67, 67, 67);
+}
+
+.nav-flotante.top {
+  transform: translateY(0); /* sube al top */
+}
+
+.logo img {
+  height: auto;              /* mantiene proporción */
+  max-height: 2.5rem;          /* controla el alto máximo */
+  width: auto;               /* evita distorsión */
+  display: block;            /* quita espacios extra */
+}
+
+/* Hamburguesa */
+.hamburguesa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburguesa span {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Barra superior */
+.hamburguesa span:nth-child(1) {
+  top: 4px;
+}
+
+/* Barra del medio */
+.hamburguesa span:nth-child(2) {
+  top: 9px;
+}
+
+/* Barra inferior */
+.hamburguesa span:nth-child(3) {
+  top: 14px;
+}
+
+/* Estado activo → X centrada */
+.hamburguesa.activo span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburguesa.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguesa.activo span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  top: 18px;
+}
+
+
+/* Menú (oculto en móvil) */
+.menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background: black;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Cuando nav está arriba → menú hacia abajo */
+.nav-flotante.top .menu {
+  top: 100%;
+  bottom: auto;
+}
+
+/* Cuando nav está abajo → menú hacia arriba */
+.nav-flotante:not(.top) .menu {
+  bottom: 100%;
+  top: auto;
+}
+
+/* Links */
+.menu li {
+  margin: 1rem 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+/* pseudo-elemento para el efecto */
+.menu li a::after {
+  content: "";
+  border-radius: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--verde-matrix);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
+  z-index: -1; /* va detrás del texto */
+}
+
+/* hover: activa la animación */
+.menu li a:hover::after {
+  transform: scaleY(1);
+}
+
+/* cambia el color del texto al hacer hover */
+.menu li a:hover {
+  color: black;
+}
+
+/* Cuando esté activo */
+.menu.activo {
+  display: block;
+}
+
+/* En desktop: siempre visible horizontal */
+@media (min-width: 1024px) {
+  .hamburguesa {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    position: static;
+    width: auto;
+    background: none;
+    gap: 2rem;
+  }
+
+  .menu li {
+    margin: 0;
+  }
+
+  .menu li a {
+    font-size: 1rem;
+  }
+}
+/* Fin Estilos para el nav ---------------------------------------------------------------*/
 
