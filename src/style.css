@@ -344,4 +344,16 @@ p {
   }
 }
 /* Fin Estilos para el nav ---------------------------------------------------------------*/
+/*Estilos para el encabezado del about ---------------------------------------------------------------*/
+
+.about-me {
+  padding: clamp(1rem, 5vw, 5rem);
+  max-width: 1200px;
+  margin: auto;
+  text-align:justify;
+  font-size: clamp(0.8rem, 2vw, 1.25rem);
+  line-height: 1.5;
+}
+
+/*Fin Estilos para el encabezado del about ---------------------------------------------------------------*/
 
