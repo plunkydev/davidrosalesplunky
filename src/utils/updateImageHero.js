@@ -14,7 +14,7 @@ export function updateImgHego(imgHero, frames) {
         imgHero.style.transition = "opacity 0.8s ease";
         imgHero.style.opacity = 0.8;
     }
-    /* applyOpacity(scrollFraction); */
+    applyOpacity(document.getElementById('sectionSkills'), scrollFraction);
     setTimeout(() => {
         imgHero.style.opacity = 1;
         imgHero.style.transition = "opacity 0.3s ease";
