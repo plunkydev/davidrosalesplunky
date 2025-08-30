@@ -29,23 +29,24 @@
 
 /* Fin Fuentes para el body */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary-font: "FuturaBook";
-    --secondary-font: "FutuBk";
-    --verde-claro: #42c920b6;
-    --verde-matrix: #42c920;
-    --gris-azulado: #14213d75;
-    --gris-claro: #ccc;
-    --font-color-oscuro: #040909;
-    --font-color-medio: #202020;
-    --font-color-claro: #292929;
-    --nav-height: 55px;
+  --primary-font: "FuturaBook";
+  --secondary-font: "FutuBk";
+  --verde-claro: #42c920b6;
+  --verde-matrix: #42c920;
+  --gris-azulado: #14213d75;
+  --gris-claro: #ccc;
+  --font-color-oscuro: #040909;
+  --font-color-medio: #202020;
+  --font-color-claro: #292929;
+  --nav-height: 55px;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -55,11 +56,18 @@ body {
   color: var(--font-color-medio);
   min-height: 9000px;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--secondary-font);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondary-font);
 }
+
 p {
-    font-family: var(--secondary-font);
+  font-family: var(--secondary-font);
 }
 
 h2 {
@@ -106,7 +114,7 @@ p {
   z-index: -1;
 }
 
-.hero-content > div {
+.hero-content>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,12 +122,12 @@ p {
   text-align: center;
 }
 
-.hero-content > div > h1 {
+.hero-content>div>h1 {
   font-size: clamp(1rem, 4vw, 3.5rem);
   font-family: "FutuBk", sans-serif;
 }
 
-.hero-content > div > p {
+.hero-content>div>p {
   font-size: clamp(0.7rem, 2vw, 1.25rem);
   margin: 0 0.5rem 2rem 0;
   color: #fff;
@@ -137,7 +145,8 @@ p {
   font-weight: 600;
   font-size: clamp(0.8rem, 2vw, 1rem);
   transition: color 0.3s ease;
-  z-index: 1; /* para que el texto quede por encima */
+  z-index: 1;
+  /* para que el texto quede por encima */
 }
 
 /* pseudo-elemento para el efecto */
@@ -148,11 +157,13 @@ p {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: #42c920; /* verde hover */
+  background: #42c920;
+  /* verde hover */
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.3s ease;
-  z-index: -1; /* detrás del texto */
+  z-index: -1;
+  /* detrás del texto */
 }
 
 /* hover: activa la animación */
@@ -162,7 +173,8 @@ p {
 
 /* opcional: cambio de color del texto en hover */
 .btn-cta:hover {
-  color: #fff; /* mantiene blanco o ponlo negro si prefieres contraste */
+  color: #fff;
+  /* mantiene blanco o ponlo negro si prefieres contraste */
 }
 
 /* Fin Estilos para el encabezado ---------------------------------------------------------------*/
@@ -186,14 +198,19 @@ p {
 }
 
 .nav-flotante.top {
-  transform: translateY(0); /* sube al top */
+  transform: translateY(0);
+  /* sube al top */
 }
 
 .logo img {
-  height: auto;              /* mantiene proporción */
-  max-height: 2.5rem;          /* controla el alto máximo */
-  width: auto;               /* evita distorsión */
-  display: block;            /* quita espacios extra */
+  height: auto;
+  /* mantiene proporción */
+  max-height: 2.5rem;
+  /* controla el alto máximo */
+  width: auto;
+  /* evita distorsión */
+  display: block;
+  /* quita espacios extra */
 }
 
 /* Hamburguesa */
@@ -303,7 +320,8 @@ p {
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.4s ease;
-  z-index: -1; /* va detrás del texto */
+  z-index: -1;
+  /* va detrás del texto */
 }
 
 /* hover: activa la animación */
@@ -343,6 +361,7 @@ p {
     font-size: 1rem;
   }
 }
+
 /* Fin Estilos para el nav ---------------------------------------------------------------*/
 /*Estilos para el encabezado del about ---------------------------------------------------------------*/
 
@@ -350,7 +369,7 @@ p {
   padding: clamp(1rem, 5vw, 5rem);
   max-width: 1200px;
   margin: auto;
-  text-align:justify;
+  text-align: justify;
   font-size: clamp(0.8rem, 2vw, 1.25rem);
   line-height: 1.5;
 }
@@ -358,7 +377,8 @@ p {
 /*Fin Estilos para el encabezado del about ---------------------------------------------------------------*/
 /*Estilos para el encabezado skills ---------------------------------------------------------------*/
 .sectionSkills {
-  position: relative; /* necesario para contener el fondo */
+  position: relative;
+  /* necesario para contener el fondo */
   width: 100%;
   padding: clamp(1rem, 5vw, 5rem);
   max-width: 2400px;
@@ -367,7 +387,8 @@ p {
   font-size: clamp(0.8rem, 2vw, 1.25rem);
   line-height: 1.5;
   color: #fff;
-  overflow: hidden; /* evita que la img se desborde */
+  overflow: hidden;
+  /* evita que la img se desborde */
 }
 
 .sectionSkills .bg-img {
@@ -376,13 +397,17 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* se comporta como background-size: cover */
-  object-position: center; /* equivalente a background-position */
-  z-index: -1; /* manda la imagen detrás del contenido */
+  object-fit: cover;
+  /* se comporta como background-size: cover */
+  object-position: center;
+  /* equivalente a background-position */
+  z-index: -1;
+  /* manda la imagen detrás del contenido */
 }
 
 .skills-container {
-  position: relative; /* asegura que el contenido quede por encima */
+  position: relative;
+  /* asegura que el contenido quede por encima */
   z-index: 1;
   margin: auto;
   padding: 20px;
@@ -461,11 +486,13 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .servicios-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (min-width: 1024px) {
   .servicios-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -477,10 +504,11 @@ p {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow:  20px 20px 60px #d0d2d4,
-             -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #d0d2d4,
+    -20px -20px 60px #ffffff;
   background-color: rgba(207, 206, 242, 0);
-  -webkit-backdrop-filter: blur(3px); /* Add this line to support Safari 9+, Safari on iOS 9+ */
+  -webkit-backdrop-filter: blur(3px);
+  /* Add this line to support Safari 9+, Safari on iOS 9+ */
   backdrop-filter: blur(3px);
   display: flex;
   flex-direction: column;
@@ -488,10 +516,11 @@ p {
 }
 
 .servicio:hover {
-  box-shadow:  20px 20px 60px #d0d2d4,
-             -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #d0d2d4,
+    -20px -20px 60px #ffffff;
   background: linear-gradient(145deg, #dddee0b7, #ffffff76);
-  -webkit-backdrop-filter: blur(3px); /* Add this line to support Safari 9+, Safari on iOS 9+ */
+  -webkit-backdrop-filter: blur(3px);
+  /* Add this line to support Safari 9+, Safari on iOS 9+ */
   backdrop-filter: blur(3px);
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -502,7 +531,8 @@ p {
   height: 2.5rem;
   margin-bottom: 1rem;
   border-radius: 50%;
-  background: var(--verde-matrix); /* color base del círculo */
+  background: var(--verde-matrix);
+  /* color base del círculo */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -515,4 +545,81 @@ p {
 
 
 /*Fin Estilos para el encabezado del servicios ---------------------------------------------------------------*/
+/* ===== Testimonios (responsive) ========================================= */
+.testimonials{
+  /* Color Swiper (flechas/paginación) scoped a la sección */
+  --swiper-theme-color: var(--font-color-medio);
+  padding: clamp(24px, 6vw, 56px) 1rem;
+}
+
+.testimonials h2{
+  text-align: center;
+  margin-bottom: clamp(12px, 2vw, 20px);
+}
+
+.testimonials .swiper{
+  width: min(100%, 1200px);
+  margin-inline: auto;
+  padding-block: clamp(8px, 2vh, 20px) clamp(24px, 6vh, 48px);
+}
+
+/* Centra cada slide (no uses la regla global de .swiper-slide) */
+.testimonials .swiper-slide{ display: grid; place-items: center; }
+
+/* Card fluida en ancho y con alto mínimo responsivo + centrado vertical */
+.t-card{
+  width: clamp(320px, 92vw, 768px);
+  min-height: clamp(280px, 44vh, 520px);
+  background: rgba(0, 0, 0, .16);
+  color: var(--font-color-medio);
+  border-radius: 16px;
+  padding: clamp(16px, 3.5vw, 28px) clamp(18px, 4vw, 36px);
+  box-shadow: 0 4px 30px rgba(0,0,0,.1);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: .1px solid rgba(0,0,0,.1);
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centra vertical */
+  align-items: center;       /* centra horizontal */
+  gap: clamp(8px, 2vh, 14px);
+  text-align: center;
+}
+
+/* Elementos internos escalables */
+.t-avatar{
+  width: clamp(72px, 10vw, 112px);
+  height: clamp(72px, 10vw, 112px);
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;            /* evita espacio de línea */
+}
+.t-quote{ font-size: clamp(1rem, 2.1vw, 1.25rem); line-height: 1.6; margin: 0; }
+.t-meta { font-weight: 600; font-size: clamp(.9rem, 1.7vw, 1rem); opacity: .9; margin: 0; }
+
+/* Controles */
+.swiper-button-prev,
+.swiper-button-next{
+  width: 44px; height: 44px; /* objetivo táctil mínimo */
+  padding: 1.5rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 24px 24px 49px #c9c9c9, -24px -24px 49px #ffffff;
+  border: none;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after{ color: var(--font-color-medio); }
+
+/* Paginación */
+.swiper-pagination-bullet{ background: var(--font-color-medio); opacity: .35; }
+.swiper-pagination-bullet-active{ opacity: 1; }
+
+/* Ocultar flechas en móvil (además de desactivarlas en el módulo) */
+@media (max-width: 965px){
+  .testimonials-prev,
+  .testimonials-next{ display: none !important; }
+}
+/* ======================================================================= */
 

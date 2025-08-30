@@ -3,6 +3,7 @@ import { frames } from './data/api-images'
 import { igualarAltura } from './utils/heroIgualarAltura'
 import { updateImgHego } from './utils/updateImageHero'
 import { nav } from './components/nav'
+import { initTestimonials } from './components/testimonials';
 // Importes “fantasma” para que Webpack EMITA los 3 assets críticos
 // (el HTML los referencia con nombre fijo; aquí solo forzamos su inclusión en el build)
 import './assets/icons/favicon.ico'
@@ -22,6 +23,7 @@ const bgSkills = document.querySelector('.bg-img');
 const bars = document.querySelectorAll('.progress-bar');
 let lastScroll = 0;
 window.onload = () => {
+    initTestimonials();
     imgHero.src = frames[0];
     bgSkills.src = bgImgSkills;
     if ('scrollRestoration' in history) {
