@@ -356,4 +356,92 @@ p {
 }
 
 /*Fin Estilos para el encabezado del about ---------------------------------------------------------------*/
+/*Estilos para el encabezado skills ---------------------------------------------------------------*/
+.sectionSkills {
+  position: relative; /* necesario para contener el fondo */
+  width: 100%;
+  padding: clamp(1rem, 5vw, 5rem);
+  max-width: 2400px;
+  margin: auto;
+  text-align: justify;
+  font-size: clamp(0.8rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  color: #fff;
+  overflow: hidden; /* evita que la img se desborde */
+}
+
+.sectionSkills .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* se comporta como background-size: cover */
+  object-position: center; /* equivalente a background-position */
+  z-index: -1; /* manda la imagen detrás del contenido */
+}
+
+.skills-container {
+  position: relative; /* asegura que el contenido quede por encima */
+  z-index: 1;
+  margin: auto;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.skills-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.skill {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.skill span {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.progress {
+  background: var(--gris-claro);
+  border-radius: 2px;
+  overflow: hidden;
+  height: clamp(1rem, 2vw, 2rem);
+}
+
+.progress-bar {
+  background: var(--gris-azulado);
+  height: 100%;
+}
+
+.percent {
+  float: right;
+  font-size: 0.8rem;
+  margin-top: 3px;
+}
+
+.btn-container {
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--verde-claro);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+/*Fin Estilos para el encabezado skills ---------------------------------------------------------------*/
 
