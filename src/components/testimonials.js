@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // Importa tus imágenes para que Webpack las emita
-import t1 from '../assets/testimonial-1.webp';
+import t1 from '../assets/maryfel-alvarado.webp';
 import t2 from '../assets/testimonial-2.webp';
 import t3 from '../assets/testimonial-3.webp';
 
@@ -16,9 +16,9 @@ import t3 from '../assets/testimonial-3.webp';
 const DEFAULT_ITEMS = [
     {
         img: t1,
-        nombre: 'Ana Pérez',
-        cargo: 'CEO, Acme Co.',
-        texto: 'David nos ayudó a lanzar rápido y con excelente rendimiento. 100% recomendado.'
+        nombre: 'Maryfel Alvarado Méndez',
+        cargo: 'Editora y redactora SEO Senior',
+        texto: 'Profesional disciplinado y detallista; siempre da lo mejor. Auténtico, innovador y creativo en diseño y desarrollo web.'
     },
     {
         img: t2,
