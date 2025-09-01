@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 // Importa tus imágenes para que Webpack las emita
 import t1 from '../assets/maryfel-alvarado.webp';
 import t2 from '../assets/testimonial-2.webp';
-import t3 from '../assets/testimonial-3.webp';
+import t3 from '../assets/sony.webp';
 
 // Datos por defecto (puedes pasarlos desde fuera si quieres)
 const DEFAULT_ITEMS = [
@@ -28,9 +28,9 @@ const DEFAULT_ITEMS = [
     },
     {
         img: t3,
-        nombre: 'María López',
-        cargo: 'Founder, Creativa',
-        texto: 'Superó expectativas en SEO y WPO. Entrega a tiempo.'
+        nombre: 'Sony Valles',
+        cargo: 'Diseñadora Gráfica Digital e Impresa',
+        texto: 'Destaca por su madurez, compromiso y creatividad. Siempre atento, paciente y audaz, genera ideas brillantes y proyectos únicos con excelencia.'
     }
 ];
 
