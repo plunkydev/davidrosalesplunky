@@ -1,31 +1,41 @@
-import { smoothScrollTo } from '../utils/effects'
-export function nav(nav, hamburguesa, menu, menuLinks, currentScroll, lastScroll) {
-    
-    
-    if (currentScroll > lastScroll) {
-        nav.classList.add('top'); // scrollea hacia abajo → nav arriba
-    } else {
-        nav.classList.remove('top'); // scrollea hacia arriba → nav abajo
-    }
-    lastScroll = currentScroll;
-    hamburguesa.addEventListener('click', () => {
-        menu.classList.toggle('activo');
-        hamburguesa.classList.toggle('activo'); // activa animación hamburguesa → X
-    });
-    menuLinks.forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault(); // evita el salto inmediato
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+// src/components/nav.js
+import { smoothScrollTo } from '../utils/effects';
 
-        if (targetElement) {
-            smoothScrollTo(targetElement, 60); // 👈 ahora solo pasas el offset
-        }
+/**
+ * Enlaza los eventos del nav UNA sola vez.
+ */
+export function initNav(navEl, hamburguesa, menu, menuLinks) {
+  if (!navEl || navEl.dataset.bound) return;
 
-        // cerrar menú hamburguesa
-        menu.classList.remove('activo');
-        hamburguesa.classList.remove('activo');
+  // Toggle menú hamburguesa
+  hamburguesa?.addEventListener('click', () => {
+    menu?.classList.toggle('activo');
+    hamburguesa.classList.toggle('activo');
+  });
+
+  // Scroll suave y cierre del menú al hacer click en un link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetEl = targetId ? document.querySelector(targetId) : null;
+      if (targetEl) smoothScrollTo(targetEl, 60);
+      menu?.classList.remove('activo');
+      hamburguesa?.classList.remove('activo');
     });
-});
-return lastScroll
+  });
+
+  // Bandera para no volver a enlazar
+  navEl.dataset.bound = 'true';
+}
+
+/**
+ * Actualiza el estado visual del nav según la dirección del scroll.
+ * Devuelve el currentScroll para reutilizar como nuevo lastScroll.
+ */
+export function updateNavOnScroll(navEl, currentScroll, lastScroll) {
+  if (!navEl) return currentScroll;
+  if (currentScroll > lastScroll) navEl.classList.add('top');
+  else navEl.classList.remove('top');
+  return currentScroll;
 }
