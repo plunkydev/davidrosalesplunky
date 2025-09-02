@@ -97,3 +97,17 @@ export function initTestimonials({
     swiper.play = () => swiper.autoplay && swiper.autoplay.start();
     return swiper;
 }
+
+// src/utils/equalizeTCards.js
+export function equalizeTCardsOnce(root = '.testimonials-swiper') {
+  const cards = [...document.querySelectorAll(`${root} .t-card`)];
+  if (!cards.length) return;
+
+  // reset por si ya se llamó antes
+  cards.forEach(c => { c.style.minHeight = ''; });
+
+  const max = Math.max(...cards.map(c => c.offsetHeight || 0));
+  if (Number.isFinite(max) && max > 0) {
+    cards.forEach(c => { c.style.minHeight = `${max}px`; });
+  }
+}
