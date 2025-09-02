@@ -568,7 +568,7 @@ p {
 
 /* Card fluida en ancho y con alto mínimo responsivo + centrado vertical */
 .t-card{
-  width: clamp(320px, 92vw, 768px);
+  width: clamp(297px, 80vw, 768px);
   min-height: clamp(280px, 44vh, 520px);
   background: rgba(0, 0, 0, .16);
   color: var(--font-color-medio);
@@ -579,13 +579,24 @@ p {
   backdrop-filter: blur(6px);
   border: .1px solid rgba(0,0,0,.1);
   margin-inline: auto;
-
   display: flex;
   flex-direction: column;
   justify-content: center;   /* centra vertical */
   align-items: center;       /* centra horizontal */
   gap: clamp(8px, 2vh, 14px);
   text-align: center;
+}
+.t-card:hover{
+  transform: scale(1.05);
+  cursor: grab;
+  box-shadow: 0 4px 30px rgba(0,0,0,.2);
+  transition: box-shadow 0.3s ease;
+}
+.t-card:active{
+  transform: scale(1.05);
+  cursor: grabbing;
+  box-shadow: 0 4px 30px rgba(0,0,0,.2);
+  transition: box-shadow 0.3s ease;
 }
 
 /* Elementos internos escalables */
@@ -596,8 +607,8 @@ p {
   object-fit: cover;
   display: block;            /* evita espacio de línea */
 }
-.t-quote{ font-size: clamp(1rem, 2.1vw, 1.25rem); line-height: 1.6; margin: 0; }
-.t-meta { font-weight: 600; font-size: clamp(.9rem, 1.7vw, 1rem); opacity: .9; margin: 0; }
+.t-quote{ font-size: clamp(1.5rem, 2.1vw, 1.25rem); line-height: 1.3; margin: 0; }
+.t-meta { font-weight: 600; font-size: clamp(1rem, 1.7vw, 1rem); opacity: .9; margin: 0; }
 
 /* Controles */
 .swiper-button-prev,
@@ -606,7 +617,6 @@ p {
   padding: 1.5rem;
   border-radius: 50%;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 24px 24px 49px #c9c9c9, -24px -24px 49px #ffffff;
   border: none;
 }
 .swiper-button-next::after,
