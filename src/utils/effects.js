@@ -13,29 +13,26 @@ function smoothScrollTo(target, offset = 60) {
   const end = target.getBoundingClientRect().top + start - offset;
   const distance = end - start;
   let startTime = null;
+  const speedFactor = 0.4;
+  const duration = Math.abs(distance) * speedFactor;
 
-  // 👇 factor para ajustar la velocidad (ms por cada 1000px recorridos)
-  const speedFactor = 0.4; // más alto = más lento
-  const duration = Math.abs(distance) * speedFactor; 
-
-  function animation(currentTime) {
-    if (!startTime) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const progress = Math.min(timeElapsed / duration, 1);
-
-    // easing easeInOutQuad
-    const ease = progress < 0.5
-      ? 2 * progress * progress
-      : -1 + (4 - 2 * progress) * progress;
-
-    window.scrollTo(0, start + distance * ease);
-
-    if (timeElapsed < duration) {
-      requestAnimationFrame(animation);
+  return new Promise((resolve) => {
+    function animation(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const ease = progress < 0.5
+        ? 2 * progress * progress
+        : -1 + (4 - 2 * progress) * progress;
+      window.scrollTo(0, start + distance * ease);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      } else {
+        resolve();
+      }
     }
-  }
-
-  requestAnimationFrame(animation);
+    requestAnimationFrame(animation);
+  });
 }
 
 export { applyFade, applyOpacity, smoothScrollTo };
