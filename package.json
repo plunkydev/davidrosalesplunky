@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/plunkydev/davidrosalesplunky/issues"
   },
-  "homepage": "https://github.com/plunkydev/davidrosalesplunky#readme",
+  "homepage": "https://plunkydev.github.io/davidrosalesplunky/",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",
