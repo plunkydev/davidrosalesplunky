@@ -45,6 +45,7 @@
   --font-color-medio: #202020;
   --font-color-claro: #292929;
   --nav-height: 55px;
+  --allBorderRadius: 0.2rem;
 }
 
 html {
@@ -54,7 +55,7 @@ html {
 body {
   font-family: "FuturaBook", sans-serif;
   color: var(--font-color-medio);
-  min-height: 9000px;
+  /* min-height: 9000px; */
 }
 
 h1,
@@ -81,6 +82,11 @@ p {
   font-size: clamp(1rem, 5vw, 1.2rem);
   margin: 1rem 0 1rem 0;
   color: var(--font-color-claro);
+}
+section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0 2rem;
 }
 
 /* Estilos para el encabezado -----------------------------------------------------------------------*/
@@ -140,7 +146,7 @@ p {
   background: var(--verde-claro);
   color: #fff;
   padding: clamp(0.2rem, 2vw, 0.8rem) clamp(0.4rem, 5vw, 1.5rem);
-  border-radius: 0.2rem;
+  border-radius: var(--allBorderRadius);
   text-decoration: none;
   font-weight: 600;
   font-size: clamp(0.8rem, 2vw, 1rem);
@@ -164,6 +170,7 @@ p {
   transition: transform 0.3s ease;
   z-index: -1;
   /* detrás del texto */
+  border-radius: var(--allBorderRadius);
 }
 
 /* hover: activa la animación */
@@ -231,7 +238,7 @@ p {
   width: 25px;
   height: 3px;
   background: white;
-  border-radius: 2px;
+  border-radius: var(--allBorderRadius);
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
@@ -366,9 +373,6 @@ p {
 /*Estilos para el encabezado del about ---------------------------------------------------------------*/
 
 .about-me {
-  padding: clamp(1rem, 5vw, 5rem);
-  max-width: 1200px;
-  margin: auto;
   text-align: justify;
   font-size: clamp(0.8rem, 2vw, 1.25rem);
   line-height: 1.5;
@@ -380,7 +384,6 @@ p {
   position: relative;
   /* necesario para contener el fondo */
   width: 100%;
-  padding: clamp(1rem, 5vw, 5rem);
   max-width: 2400px;
   margin: auto;
   text-align: justify;
@@ -410,9 +413,9 @@ p {
   /* asegura que el contenido quede por encima */
   z-index: 1;
   margin: auto;
-  padding: 20px;
+  padding: 0 clamp(1rem, 5vw, 5rem);
   color: #fff;
-  border-radius: 10px;
+  border-radius: var(--allBorderRadius);
   text-align: center;
 }
 
@@ -480,30 +483,11 @@ p {
   gap: 2rem;
 }
 
-/* Responsive columnas */
-@media (max-width: 767px) {
-  .servicios-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .servicios-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .servicios-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* Tarjeta */
 .servicio {
   background: #fff;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: var(--allBorderRadius);
   box-shadow: 20px 20px 60px #d0d2d4,
     -20px -20px 60px #ffffff;
   background-color: rgba(207, 206, 242, 0);
@@ -572,7 +556,7 @@ p {
   min-height: clamp(280px, 44vh, 520px);
   background: rgba(0, 0, 0, .16);
   color: var(--font-color-medio);
-  border-radius: 16px;
+  border-radius: var(--allBorderRadius);
   padding: clamp(16px, 3.5vw, 28px) clamp(18px, 4vw, 36px);
   box-shadow: 0 4px 30px rgba(0,0,0,.1);
   -webkit-backdrop-filter: blur(6px);
@@ -632,4 +616,175 @@ p {
   .testimonials-next{ display: none !important; }
 }
 /* ======================================================================= */
+/* Formulario============================================================== */
+.contacto {
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    gap: 8px;
+    margin: 1rem auto;
+  }
+
+  .contacto h2 {
+    grid-column: span 2 / span 2;
+    margin: 0.5rem 0 0.5rem 0;
+    color: #fff;
+  }
+
+.contact_main__form {
+  grid-row-start: 2;
+  width: 100%;
+  /* Ocupa el 95% del ancho disponible en pantallas pequeñas */
+  background: #ffffff;
+  padding: clamp(1rem, 3vw, 2rem);
+  /* Reduce padding en proporción para pantallas pequeñas */
+  border-radius: var(--allBorderRadius);
+  box-shadow: 20px 20px 60px #d0d2d4,
+    -20px -20px 60px #ffffff;
+  background-color: rgba(207, 206, 242, 0);
+    -webkit-backdrop-filter: blur(3px);
+  /* Add this line to support Safari 9+, Safari on iOS 9+ */
+  backdrop-filter: blur(3px);
+}
+.div3 {
+    grid-row-start: 2;
+}
+.contact_form_buttons {
+  grid-column: span 2 / span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}  
+
+.contact_form_buttons .btn-cta {
+    width: clamp(150px, 30%, 200px);
+    margin: auto;
+    border: none;
+  }
+  .contact_main__form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaciado relativo entre los elementos */
+    align-items: stretch;
+  }
+  
+  .contact_main__form_field {
+    display: flex;
+    gap: 1.2rem; /* Espaciado relativo entre label y input */
+    align-items: center;
+  }
+  
+  .contact_main__form_field_label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem; /* Tamaño relativo para escalar en pantallas pequeñas */
+    color: #fff;
+  }
+  
+  .contact_main__form_field_input,
+  .contact_main__form_field textarea {
+    width: 90%; /* Ajusta automáticamente al contenedor */
+    padding: 0.6rem; /* Espaciado interno relativo */
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Ligera reducción en fuentes para pantallas pequeñas */
+    border: 1px solid #ddd;
+    border-radius: var(--allBorderRadius);
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .contact_main__form_field_input:focus,
+  .contact_main__form_field textarea:focus {
+    border-color: var(--verde-claro);
+  }
+  
+  
+/* Fin de estilos Formulario */
+
+/* Responsive ===================================================================*/
+@media (max-width: 767px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials, .servicios  {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0 0;
+}
+
+  .contacto {
+    padding: clamp(2rem, 5vw, 5rem) 1rem;
+    text-align: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 2fr 1fr;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .contact_main__form_field_input,
+  .contact_main__form_field textarea {
+    width: 90%; /* Ajusta automáticamente al contenedor */
+    padding: 0.3rem; /* Espaciado interno relativo */
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Ligera reducción en fuentes para pantallas pequeñas */
+    border: 1px solid #ddd;
+    border-radius: var(--allBorderRadius);
+    outline: none;
+    transition: all 0.3s ease;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contacto {
+    padding: clamp(2rem, 5vw, 5rem) 1rem;
+    text-align: center;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr 2fr 1fr;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+    .contact_main__form_field_input,
+  .contact_main__form_field textarea {
+    width: 90%; /* Ajusta automáticamente al contenedor */
+    padding: 0.3rem; /* Espaciado interno relativo */
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Ligera reducción en fuentes para pantallas pequeñas */
+    border: 1px solid #ddd;
+    border-radius: var(--allBorderRadius);
+    outline: none;
+    transition: all 0.3s ease;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contacto {
+    padding: 0 1rem;
+    width: 100%;
+    text-align: center;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    object-fit: contain;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Regla específica para iPad Pro en orientación vertical */
+@media (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) {
+  .contacto {
+    /* Aquí puedes ajustar o eliminar propiedades que no funcionen bien en iPad Pro.
+       Por ejemplo, podrías quitar el aspect-ratio o modificar la altura. */
+    aspect-ratio: unset;
+    min-height: 70vh;
+    /* Otras modificaciones específicas */
+  }
+}
 
