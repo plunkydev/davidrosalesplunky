@@ -8,7 +8,7 @@ function applyOpacity(imgSkills, scrollFraction) {
   imgSkills.style.opacity = opacity;
 }
 
-function smoothScrollTo(target, offset = 60) {
+function smoothScrollTo(target, offset = 56) {
   const start = window.pageYOffset;
   const end = target.getBoundingClientRect().top + start - offset;
   const distance = end - start;
