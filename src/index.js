@@ -1,6 +1,7 @@
 // src/index.js
 import './style.css';
 import { frames } from './data/api-images';
+import { smoothScrollTo } from './utils/effects';
 import { igualarAltura } from './utils/heroIgualarAltura';
 import { updateImgHego } from './utils/updateImageHero';
 import { initNav, updateNavOnScroll } from './components/nav';
@@ -29,8 +30,17 @@ const bgSkills = document.querySelector('.bg-img');
 const bars = document.querySelectorAll('.progress-bar');
 const contacto = document.querySelector('.contacto');
 const formContact = document.querySelector('.contact_main__form');
+const btnSmmoth = document.querySelectorAll('.efectSmooth');
 let lastScroll = 0;
 let currentScroll = window.scrollY;
+if (btnSmmoth) {
+  btnSmmoth.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      smoothScrollTo(document.querySelector(e.target.getAttribute('href'))).catch(console.error);
+      lastScroll = updateNavOnScroll(navId, currentScroll, lastScroll);
+    });
+  });
+}
 
 window.onload = () => {
   // 1) Carrusel (una sola vez) + toggle play/pause al click en .t-card
