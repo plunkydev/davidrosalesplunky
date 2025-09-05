@@ -1,6 +1,6 @@
 // src/components/nav.js
 import { smoothScrollTo } from '../utils/effects';
-
+let isNavClicked = false;
 /**
  * Enlaza los eventos del nav UNA sola vez.
  */
@@ -19,9 +19,18 @@ export function initNav(navEl, hamburguesa, menu, menuLinks) {
       e.preventDefault();
       const targetId = link.getAttribute('href');
       const targetEl = targetId ? document.querySelector(targetId) : null;
-      if (targetEl) smoothScrollTo(targetEl, 60);
+      if (targetEl) {
+        smoothScrollTo(targetEl, 56).then(() => {
+          // Cuando la animación se completa, desactivar la bandera
+          isNavClicked = false;
+        });
+      }
       menu?.classList.remove('activo');
       hamburguesa?.classList.remove('activo');
+      
+      // Forzar que el nav quede en top
+      navEl.classList.add('top');
+      isNavClicked = true;
     });
   });
 
@@ -35,6 +44,10 @@ export function initNav(navEl, hamburguesa, menu, menuLinks) {
  */
 export function updateNavOnScroll(navEl, currentScroll, lastScroll) {
   if (!navEl) return currentScroll;
+  if (isNavClicked && currentScroll !== 0) {
+    navEl.classList.add('top')
+    return lastScroll;
+  }
   if (currentScroll > lastScroll) navEl.classList.add('top');
   else navEl.classList.remove('top');
   return currentScroll;
