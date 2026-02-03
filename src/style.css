@@ -37,7 +37,7 @@
 :root {
   --primary-font: "FuturaBook";
   --secondary-font: "FutuBk";
-  --verde-claro: #42c920b6;
+  --verde-claro: #34a019;
   --verde-matrix: #42c920;
   --gris-azulado: #14213d75;
   --gris-claro: #ccc;
@@ -165,7 +165,7 @@ section {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: #42c920;
+  background: var(--verde-matrix);
   /* verde hover */
   transform: scaleY(0);
   transform-origin: bottom;
